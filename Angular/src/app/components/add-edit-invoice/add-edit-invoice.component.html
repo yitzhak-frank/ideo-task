@@ -1,0 +1,22 @@
+<form #formCtrl="ngForm">
+  <h3 class="text-center">{{data?.invoice ? 'Edit' : 'Add'}} Invoice</h3>
+  <div class="form-group">
+    <label for="Status">Select status</label>
+    <select name="Status" class="form-control" [ngModel]="data?.invoice?.Status||0">
+      <option [value]="0">New</option>
+      <option [value]="1">In Progress</option>
+      <option [value]="2">Paid</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Amount">Enter amount</label>
+    <input [ngModel]="data?.invoice?.Amount" required name="Amount" type="number" class="form-control">
+  </div>
+  <button
+    class="btn btn-outline-success w-100 mt-4"
+    [disabled]="formCtrl.invalid"
+    [mat-dialog-close]="true"
+    (click)="submit()"
+  >Save</button>
+  <small [mat-dialog-close]="false" class="text-info mt-2 d-block text-center">Close</small>
+</form>

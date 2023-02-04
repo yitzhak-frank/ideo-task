@@ -1,0 +1,23 @@
+<div class="item border shadow">
+  <div class="d-flex justify-content-between">
+    <strong class="index">{{index}}</strong>
+    <small [class]="'sorter status status-' + invoice.Status" (click)="sorter.sort('Status')">
+      {{getStatusStr(invoice.Status)}}
+      <i class="fa fa-arrow-down mr-1" [ngStyle]="sorter.style('Status')"></i>
+    </small>
+  </div>
+  <div class="amount sorter" (click)="sorter.sort('Amount')">
+    <h1><strong>{{invoice.Amount}}</strong></h1>
+    <i class="fa fa-arrow-down mr-1" [ngStyle]="sorter.style('Amount')"></i>
+  </div>
+  <div class="d-flex justify-content-between align-items-end">
+    <small class="date text-secondary sorter" (click)="sorter.sort('Date')">
+      {{invoice.Date | date: 'dd/MM/yyy hh:mm a'}}
+      <i class="fa fa-arrow-down mr-1" [ngStyle]="sorter.style('Date')"></i>
+    </small>
+    <div class="icons">
+      <i class="border fas fa-trash-alt text-danger mx-1" (click)="delete.emit(invoice.Id)"></i>
+      <i class="border far fa-edit" (click)="edit.emit(invoice)"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 40px;
+  height: 100px;
+  width: 100px;
+  opacity: .75;
+  border-radius: 50%;
+  border: 3px solid #d9534f;
+}
+
+button {
+  box-shadow: none !important;
+}

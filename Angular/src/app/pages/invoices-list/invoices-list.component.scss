@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+
+  .title {
+    margin: 25px 5px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .list {
+    margin-bottom: 25px;
+  }
+
+  .add {
+    position: sticky;
+    bottom: 15px;
+    float: right;
+    font-weight: bold;
+    font-size: 40px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: .3s;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      background-color: #aaa;
+    }
+  }
+}

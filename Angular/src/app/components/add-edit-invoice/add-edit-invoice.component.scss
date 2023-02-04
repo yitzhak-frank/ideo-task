@@ -1,0 +1,12 @@
+.form-group {
+  label {
+    font-size: 12px;
+    margin-bottom: -10px;
+  }
+
+  select, input {
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="main">
+  <i class="fas fa-trash-alt text-danger"></i>
+  <h6 class="text-center text-danger">
+    Are you sure you want to delete?
+  </h6>
+  <button [mat-dialog-close]="true" class="btn btn-outline-danger w-100" (click)="delete()">Delete</button>
+  <small [mat-dialog-close]="false" class="mt-2 w-100 text-center text-info">Close</small>
+</div>

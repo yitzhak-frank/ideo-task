@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="title border shadow">
+    <h1 class="text-center">Invoices List</h1>
+  </div>
+  <div class="list row" appSorter #sorter="sorter" [data]="data">
+    <app-invoice-item
+      class="col-12 col-md-6 col-xl-4"
+      *ngFor="let invoice of data; index as i"
+      [invoice]="invoice"
+      [index]="i+1"
+      [sorter]="sorter"
+      (edit)="addAndEdit($event)"
+      (delete)="delete($event)"
+    ></app-invoice-item>
+  </div>
+  <span class="add border shadow" (click)="addAndEdit()">+</span>
+</div>
