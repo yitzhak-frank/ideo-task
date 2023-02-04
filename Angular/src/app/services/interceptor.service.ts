@@ -7,10 +7,12 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/c
 })
 export class InterceptorService implements HttpInterceptor {
 
-  private readonly apiUrl = 'https://localhost:7182';
+  private readonly localApiUrl = 'https://localhost:7182';
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const apiReq = req.clone({ url: `${this.apiUrl}/${req.url}` });
-    return next.handle(apiReq);
+    if(!['localhost', '127.0.0.1'].some(path => req.url.includes(path)))
+      return next.handle(req);
+    const localApiReq = req.clone({ url: `${this.localApiUrl}/${req.url}` });
+    return next.handle(localApiReq);
   }
 }
